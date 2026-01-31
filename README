@@ -1,0 +1,79 @@
+
+BankAccountSimulator
+====================
+
+Simple command-line bank account simulator written in C++.
+
+Overview
+--------
+This small project demonstrates a minimal Bank Account simulator with a single `Account` class and a CLI-driven `main` program. It's intended as a learning/example project for basic class design, file separation, and simple I/O in C++.
+
+Features
+--------
+- Create accounts with a starting balance
+- Deposit and withdraw funds (basic checks)
+- Simple console-based interaction
+
+Prerequisites
+-------------
+- A C++ compiler supporting C++17 (g++, clang++)
+- Unix-like shell (macOS, Linux). The commands below assume macOS (zsh/bash).
+
+Build
+-----
+Create a `build/` directory and compile the sources. From the project root run:
+
+```bash
+mkdir -p build
+g++ -std=c++17 -I src -O2 -o build/banksim src/*.cpp
+```
+
+This will produce an executable `build/banksim` (the project already contains a `build/` folder used for artifacts).
+
+Run
+---
+Execute the simulator from the project root:
+
+```bash
+./build/banksim
+```
+
+The program will run in the terminal and prompt for actions (see source `main.cpp` for details on available commands and flow).
+
+Example
+-------
+Typical usage looks like:
+
+```text
+Welcome to BankAccountSimulator
+1) Create account
+2) Deposit
+3) Withdraw
+4) Show balance
+5) Exit
+> 1
+Enter initial balance: 1000
+Account created.
+> 2
+Enter deposit amount: 250
+Deposit successful. New balance: 1250
+```
+
+Project layout
+--------------
+- `src/Account.h` - Declaration of the `Account` class and public API.
+- `src/Account.cpp` - `Account` class implementation.
+- `src/main.cpp` - Entry point and CLI interaction logic.
+- `build/` - Output folder for compiled binaries (not committed in git normally).
+
+Contributing
+------------
+Contributions are welcome. Open an issue or submit a pull request with improvements or bug fixes. Keep changes small and focused.
+
+License
+-------
+This project is provided under the MIT License. Use, modify, and distribute freely.
+
+Author
+------
+Created by the project owner.
